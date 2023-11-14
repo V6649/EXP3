@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component } from'@angular/core';
+import {FormGroup, FormControl } from'@angular/forms';
 
+ 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+  selector:'app-root',
+  templateUrl:'./app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'EXP3';
+  title="EXP3";
+  registrationform=new FormGroup({username:new FormControl('Admin'),
+  password:new FormControl(''),
+  cfnpassword:new FormControl('')});
+  loginrequest()
+  {
+    console.log(this.registrationform.value);
+  }
+
+  
 }
